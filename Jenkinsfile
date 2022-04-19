@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                tar -cvf output.tar .
+                sh "tar --exclude='./.git' --exclude='./Jenkinsfile' -cvf outpur.tar . " 
             }
         }
         stage('Test') {
